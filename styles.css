@@ -362,9 +362,14 @@ color: var(--clr-secondary);
 
 .about{
   background: var(--clr-white);
+  text-align: center;
 }
 
-/* From TonyBatts for the skills section */
+.about-image-container{
+
+}
+
+/* Skills section */
 
 .flex-container2 {
   display: flex;
@@ -413,7 +418,7 @@ color: var(--clr-secondary);
   color: #d6b2ff;
 }
 
-/* Icons from tony */
+/* Icons */
 
 .icon1 {
   text-align: center;
@@ -424,12 +429,7 @@ color: var(--clr-secondary);
   padding-bottom: 1rem;
 }
 
-/* Think this is for icon's i dont have and is from tony batts, can delete later. */
-.icon {
-  text-align: center;
-  font-size: 6rem;
-  color: #252934;
-}
+
 
 .icon h3 {
   text-align: center;

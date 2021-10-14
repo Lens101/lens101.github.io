@@ -24,7 +24,7 @@
                 <!-- nav header -->
                 <div class="nav-header">
                     <!-- Logo -->
-                     <img src="images/logo.ico" class="logo" alt="logo" />
+                    <img src="images/logo.ico" class="logo" alt="logo" />
                     <button class="nav-toggle">
                         <i class="fas fa-bars"></i>
                     </button>
@@ -61,21 +61,26 @@
         <div class="title">
             <h2>About <span>me</span></h2>
         </div>
-        <p class="section__subtitle section__subtitle--about">Front end developer based out of London</p>
-        <div class="about-me__body">
-            <p>I have a diploma in computer science from the University of East Anglia.<br>
-                My interests involve responsive mobile first web design, Artificial Intelligence, and robotics.<br>
-                I am currently learning React and Django and I am hopeful to be able to use them in a professional
-                setting soon. <br>
-                Outside of work I am a keen sportsman and hockey coach, with a passion for motivating others to get the
-                best out of themselves. I pride myself on my ability to communicate empathetically and articulately.
-            </p>
-            <p><i>For a full resume, please refer to my
-                    <a href="https://www.linkedin.com/in/robert-harbord-66ab8b145/" target=”_blank”>LinkedIn</a>
-                    in the footer, or <a href="/newCombined/CV.pdf" target=”_blank”> download </a> a copy.</i>
-                </i></p>
+        <div class="container-about">
+            <p class="section__subtitle section__subtitle--about">Front end developer based out of London</p>
+            <div class="about-me__body">
+                <p>I have a diploma in computer science from the University of East Anglia.<br>
+                    My interests involve responsive mobile first web design, Artificial Intelligence, and robotics.<br>
+                    I am currently learning React and Django and I am hopeful to be able to use them in a professional
+                    setting soon. <br>
+                    Outside of work I am a keen sportsman and hockey coach, with a passion for motivating others to get
+                    the
+                    best out of themselves. I pride myself on my ability to communicate empathetically and articulately.
+                </p>
+                <p><i>For a full resume, please refer to my
+                        <a href="https://www.linkedin.com/in/robert-harbord-66ab8b145/" target=”_blank”>LinkedIn</a>
+                        in the footer, or <a href="/newCombined/CV.pdf" target=”_blank”> download </a> a copy.</i>
+                    </i></p>
+            </div>
         </div>
-        <img src="images/pp1.jpg" alt="A picture of Rob" class="intro-image">
+        <div class="about-image-container">
+            <img src="images/pp1.jpg" alt="A picture of Rob" class="intro-image">
+        </div>
     </section>
     <!-- SKILLS SECTION -->
     <section class="section wrapper2" id="skills">
@@ -129,7 +134,7 @@
         </div>
         <div class="portfolio">
             <!--Portfolio item 01-->
-            <a href="#" class="portfolio__item">
+            <a href="./color flipper/index.html" class="portfolio__item">
                 <img src="images/chatbot-image.png" alt="" srcset="" class="portfolio__image">
             </a>
             <!--Portfolio item 02-->
@@ -162,30 +167,30 @@
             <h2>Contact <span>me</span></h2>
         </div>
 
-            <div class="containerform">
-                <form action="https://formspree.io/f/xbjqervw" method="POST" autocomplete="on">
-                    <label for="Name">Name</label>
-                    <div class="formpadding">
-                        <input class="form-input" type="text" name="name" id="Name" required />
-                    </div>
+        <div class="containerform">
+            <form action="https://formspree.io/f/xbjqervw" method="POST" autocomplete="on">
+                <label for="Name">Name</label>
+                <div class="formpadding">
+                    <input class="form-input" type="text" name="name" id="Name" required />
+                </div>
 
-                    <label for="email">Email</label>
-                    <div class="formpadding">
-                        <input class="form-input" type="email" name="email" id="email" required />
+                <label for="email">Email</label>
+                <div class="formpadding">
+                    <input class="form-input" type="email" name="email" id="email" required />
 
-                    </div>
+                </div>
 
-                    <label for="message">Your Message</label>
-                    <div class="formpadding">
-                        <textarea class="form-input" name="message" id="message" required
-                            style="margin-bottom: -6px"></textarea>
+                <label for="message">Your Message</label>
+                <div class="formpadding">
+                    <textarea class="form-input" name="message" id="message" required
+                        style="margin-bottom: -6px"></textarea>
 
-                    </div>
-                    <input class="form-input" type="submit" value="SUBMIT" />
-            </div>
+                </div>
+                <input class="form-input" type="submit" value="SUBMIT" />
+        </div>
 
-            <!-- TODO: Hide using js by default, if error show, if sucess show other msg -->
-            <!-- 
+        <!-- TODO: Hide using js by default, if error show, if sucess show other msg -->
+        <!-- 
 
           <span class="error" style="text-align: center"
             >Form submission failed, try again later</span>
@@ -197,7 +202,7 @@
 
 -->
 
-            <!-- End Contact me -->
+        <!-- End Contact me -->
     </section>
 
     <!-- footer -->
