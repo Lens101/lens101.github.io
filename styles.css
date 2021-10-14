@@ -1,0 +1,686 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: #49a6e9;
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-secondary: hsla(182, 63%, 54%);
+  --clr-black: #222;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+/* Creates smooth scrolling around the webpage. */
+html {
+  scroll-behavior: smooth;
+}
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-secondary);
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+ img:not(.logo) {
+  width: 100%;
+} 
+
+img {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-primary);
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+
+}
+/*  global classes */
+
+.btn {
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--clr-black);
+  padding: 0.375rem 0.75rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  transition: var(--transition);
+  font-size: 0.875rem;
+  border: 2px solid var(--clr-black);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+}
+.btn:hover {
+  color: var(--clr-white);
+  background: var(--clr-black);
+}
+.btn-white {
+  color: var(--clr-white);
+  border-color: var(--clr-white);
+  border-radius: 0;
+  padding: 0.5rem 1rem;
+}
+.btn:hover {
+  background: var(--clr-white);
+  color: var(--clr-secondary);
+}
+
+.section {
+  padding-bottom: 5rem;
+}
+
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+/*
+=============== 
+Scroll
+===============
+*/
+/* navbar */
+nav {
+  background: var(--clr-white);
+  padding: 1rem 1.5rem;
+}
+/* fixed nav */
+.fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--clr-white);
+  box-shadow: var(--light-shadow);
+}
+.fixed-nav .links a {
+  color: var(--clr-grey-1);
+}
+.fixed-nav .links a:hover {
+  color: var(--clr-secondary);
+}
+/* .fixed-nav .links-container {
+  height: auto !important;
+} */
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-toggle {
+  font-size: 1.5rem;
+  color: var(--clr-grey-1);
+  background: transparent;
+  border-color: transparent;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.nav-toggle:hover {
+  color: var(--clr-secondary);
+}
+.logo {
+  height: 50px;
+}
+.intro-image{
+  width: 180px  !important;
+}
+.links-container {
+  height: 0;        /* By default, we want to hide these links. */
+  overflow: hidden;
+  transition: var(--transition);
+}
+.show-links {
+  height: 200px;
+}
+/* 
+No height propertyin links, so we can target this specifically
+ when using getBoundingClientRect().height
+ */
+.links a {
+  background: var(--clr-white);
+  color: var(--clr-grey-5);
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  display: block;
+  transition: var(--transition);
+  font-weight: bold;
+  padding: 0.75rem 0;
+}
+.links a:hover {
+  color: var(--clr-grey-1);
+}
+@media screen and (min-width: 800px) {
+  nav {
+    background: transparent;
+  }
+  .nav-center {
+    width: 90vw;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-header {
+    padding: 0;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .links-container {
+    height: auto !important; /* Without impotant tag, the inline css added by the JS would override the external stylesheet style. */
+  }
+  .links {
+    display: flex;
+  }
+  .links a {
+    background: transparent;
+    color: var(--clr-white);
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    letter-spacing: var(--spacing);
+    display: block;
+    transition: var(--transition);
+    margin: 0 1rem;
+    font-weight: bold;
+    padding: 0;
+  }
+  .links a:hover {
+    color: var(--clr-white);
+  }
+}
+/* hero */
+header {
+  min-height: 100vh;
+  background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
+    url(./images/hero-bcg.jpeg) center/cover no-repeat;
+}
+.banner {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.container{
+  max-width: 100%;
+}
+.container h1 {
+  color: var(--clr-white);
+  text-transform: uppercase;
+}
+.container p {
+  color: var(--clr-white);
+  max-width: 25rem;
+  margin: 0 auto;
+  margin-bottom: 1.25rem;
+}
+@media screen and (min-width: 768px) {
+  .container p {
+    max-width: 40rem;
+  }
+}
+
+
+/* sections and title */
+.title h2 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
+.title span {
+  color: var(--clr-secondary);
+}
+
+.contactTitle h2 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 1em;
+  padding-bottom: 0;
+}
+.contactTitle span{
+color: var(--clr-secondary);
+}
+#services {
+  background: var(--clr-white);
+}
+
+/* About section */
+
+.about{
+  background: var(--clr-white);
+}
+
+/* From TonyBatts for the skills section */
+
+.flex-container2 {
+  display: flex;
+  flex-wrap: wrap;                /* Will wrap to next line if container can't contain all elements.*/
+  justify-content: space-around; /* Will put space around each element, inc top / bottom of container. */
+}
+
+/* For screens < 600px, flex the box downwards. */
+@media screen and (max-width: 600px){
+  .flex-container2{
+    flex-direction: column;
+  }
+}
+
+.flex-container2 > div {
+  padding-bottom: 4rem;
+}
+.flex-container2 > h3 {
+  font-size: 300px;
+}
+
+.wrapper2 {
+  background-color: #f5f5f5;
+  padding-bottom: 1em;
+}
+
+/* Custom icon colours */
+
+#js-icon {
+  color:#F6C700;
+  text-align: center;
+}
+#html-icon{
+  color: orangered;
+}
+#css3-icon{
+  color:#2E8BC0
+}
+#python-icon{
+  color: 	green;
+}
+#java-icon{
+  color: #ff4c4c;
+}
+#sql-icon{
+  color: #d6b2ff;
+}
+
+/* Icons from tony */
+
+.icon1 {
+  text-align: center;
+}
+
+.spancss {
+  font-size: 7.5em;
+  padding-bottom: 1rem;
+}
+
+/* Think this is for icon's i dont have and is from tony batts, can delete later. */
+.icon {
+  text-align: center;
+  font-size: 6rem;
+  color: #252934;
+}
+
+.icon h3 {
+  text-align: center;
+  padding-bottom: 1rem;
+  color: #616161;
+  font-size: 1.4rem;
+}
+
+/* > sign means it will target elements which are direct children of a prticular element. */
+
+.icon1 > h3 {
+  padding-top: 1rem;
+  text-align: center;
+  color: #616161;
+  font-size: 14px;
+}
+
+/* Portfolio work */
+
+.my-work {
+  background: var(--clr-white);
+  color: var(--clr-black);
+  text-align: center;
+  padding-bottom: 0; 
+}
+
+/*
+Below 300px, this will stay at max width, but everything else will shrink around it.
+Thankfully, no phone on the chrome devtools has a width < 300.
+*/
+.portfolio {
+  display: grid;
+  /* Each grid has min size of 300px, but if has room to grow it will, I.E. repsonsive.*/
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
+  /* grid-template-columns: repeat(4, 1fr); */ /* Good, but doesn't handle small screens well  */
+
+}
+
+.portfolio__item {
+  background-color: var(--clr-green-light);
+  overflow: hidden;
+}
+
+.portfolio__image {
+  display: block;
+  transition:
+      all 750ms cubic-bezier(.5, 0, .5, 1),
+      opacity 250ms linear;
+}
+
+ .portfolio__item > .portfolio__image{
+  height: 100%;
+
+} 
+
+.portfolio__item:focus{
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio__image:hover,
+.portfolio__item:focus .portfolio__image {
+  transform: scale(1.2);
+  opacity: .75;
+}
+
+/* Footer */
+
+footer {
+  background: var(--clr-grey-1);
+  padding: 2rem;
+  text-align: center;
+}
+footer p, footer a {
+  color: var(--clr-white);
+  letter-spacing: var(--spacing);
+  margin-bottom: 0;
+}
+
+.footer-link:hover,
+.social-list__link:hover {
+  opacity:.7;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+.social-list{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+  padding: 0;
+}
+.social-list__item {
+  margin:0 .5em;
+  font-size: 30px;
+}
+
+.top-link {
+  font-size: 1.25rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background: var(--clr-secondary);
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+  color: var(--clr-white);
+  animation: bounce 2s ease-in-out infinite;
+
+  visibility: hidden; /* The link to top of page is hidden by default */
+  z-index: -100;
+}
+.show-link {
+  visibility: visible; /* Therefore must add show-link to the element class list at arbitrary scroll height to allow for visibility. */
+  z-index: 100;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* CONTACT */
+
+.contact{
+  padding-bottom: 10px !important;
+}
+
+/* Form padding */
+.containerform {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-left: 22%;
+  padding-right: 22%;
+}
+
+.containerform{
+  text-align: center;
+  align-content: center;
+ width: 100%;
+ height: auto;
+}
+
+form {
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Form padding inbetween the form elements */
+.formpadding {
+  position: relative;
+  margin-top: 8px;
+  margin-bottom: 15px;
+}
+
+input,
+textarea {
+  width: 6.5em;
+  color: white;
+  font-size: inherit;
+  font-family: inherit;
+  background-color: var(--clr-grey-1);
+  padding: 0.35em 0.45em;
+  border: 1px solid transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  box-shadow: hsl(205, 90%, 76%) inset;
+  -webkit-box-shadow: hsl(205, 90%, 76%) inset;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color:hsl(209, 61%, 16%);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.formpadding span {
+  position: absolute;
+  background-color: #3cefff;
+  transition: transform 0.5s ease;
+}
+
+label {
+  color:hsl(209, 61%, 16%);
+  font-size: 16px;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+
+input[type="text"],
+select,
+textarea {
+  border-width: 0px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+input[type="email"],
+select,
+textarea {
+  font-size: 16px;
+  border-width: 0px;
+  cursor: pointer;
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type="submit"] {
+  -webkit-appearance: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0.1em solid #ffffff;
+  background-color:hsl(205, 90%, 76%);
+  padding: 10px 30px;
+  margin: 5px 0 0 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  width: 130px;
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.5s;
+  font-size: 0.8em;
+}
+
+/* When mouse hover, add a color change */
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: #02c2c7;
+}
