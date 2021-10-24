@@ -35,6 +35,7 @@ navToggle.addEventListener("click", function () {
 
 const navbar = document.getElementById("nav");
 const topLink = document.querySelector(".top-link");
+const logo = document.querySelector(".logo");
 
 //This will fix the navbar once you scroll down past it to keep it always available to the user's screen.
 
@@ -46,8 +47,10 @@ window.addEventListener("scroll", function () {
   if (scrollHeight > navHeight) {
     navbar.classList.add("fixed-nav"); //not .fixed-nav here when adding classes.
     /* console.log(navHeight); */
+    /* logo.classList.remove("transparent-logo"); */
   } else {
     navbar.classList.remove("fixed-nav");
+    /* logo.classList.add("transparent-logo"); */
   }
   if (scrollHeight > 1300) {
     topLink.classList.add("show-link");

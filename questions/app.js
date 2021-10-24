@@ -6,7 +6,7 @@
 
 //if close button, hide text again. - toggle works for both!
 
-//if open another button question, close currently open text, and open new answer text. - forEach question if the button clicked !== the 
+//if open another button question, close currently open text, and open new answer text. - forEach question if the button clicked !== the
 
 //Method1:
 
@@ -14,25 +14,22 @@
 
 const questions = document.querySelectorAll(".question");
 
-questions.forEach(function(question){
+questions.forEach(function (question) {
+  //console.log(question); - returns all the questions.
+  const btn = question.querySelector(".question-btn"); //From inside 'question' tag, query select the tags with the class .question-btn. - Cool!
+  //console.log(btn);
 
-    //console.log(question); - returns all the questions.
-    const btn = question.querySelector(".question-btn"); //From inside 'question' tag, query select the tags with the class .question-btn. - Cool!
-    //console.log(btn);
+  btn.addEventListener("click", function () {
+    //Close the other question if a new one is opened, only one open at a time.
+    questions.forEach(function (item) {
+      //console.log(item);
+      if (item !== question) {
+        item.classList.remove("show-text");
+      }
+    });
 
-    btn.addEventListener("click", function (){
-
-
-        //Close the other question if a new one is opened, only one open at a time.
-        questions.forEach(function(item){
-            //console.log(item);
-            if(item !== question){
-                item.classList.remove("show-text");
-            }
-        });
-
-        question.classList.toggle("show-text");
-    })
+    question.classList.toggle("show-text");
+  });
 });
 
 //Method 2:
@@ -57,3 +54,33 @@ btns.forEach(function (btn) {
 
 //.parentElement just moves up a tag in the HTML tree,
 //meaning i can reference a div from one of its nested child div's.
+
+/* 
+        addition for the tabs functionality
+==========================================================
+==========================================================
+==========================================================
+
+*/
+
+const about = document.querySelector(".about");
+const btns = document.querySelectorAll(".tab-btn");
+const articles = document.querySelectorAll(".content");
+
+about.addEventListener("click", function (e) {
+  const id = e.target.dataset.id;
+
+  if (id) {
+    //remove active from the other buttons
+    btns.forEach(function (btn) {
+      btn.classList.remove("active");
+      e.target.classList.add("active");
+    });
+    //Hide other articles
+    articles.forEach(function (article) {
+      article.classList.remove("active");
+    });
+    const element = document.getElementById(id);
+    element.classList.add("active");
+  }
+});
