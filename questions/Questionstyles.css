@@ -68,7 +68,7 @@ Global Styles
   box-sizing: border-box;
 }
 body {
-  font-family: var(--ff-secondary);
+  font-family: var(--ff-secondary), cursive;
   background: var(--clr-grey-10);
   color: var(--clr-grey-1);
   line-height: 1.5;
@@ -181,17 +181,21 @@ main {
 Questions
 ===============
 */
+.questions {
+  display: flex;
+}
 .title {
-  margin-top: 15vh;
-  margin-bottom: 4rem;
+  margin-top: 10vh;
 }
 .title h2 {
   color: var(--clr-gold);
   font-family: "Great Vibes", cursive;
   text-align: center;
 }
-.section-center {
-  max-width: var(--fixed-width);
+.title p {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 0;
 }
 .question {
   background: var(--clr-white);
@@ -231,18 +235,209 @@ Questions
   margin-bottom: 0;
 }
 /* hide text */
- .question-text {
+.question-text {
   display: none;
 }
 .show-text .question-text {
   display: block;
 }
-.minus-icon { /* Hides the minus button until it's accessed through show-text in the statement below. */
+.minus-icon {
+  /* Hides the minus button until it's accessed through show-text in the statement below. */
   display: none;
 }
-.show-text .minus-icon { /* Minus button and text now visible after plus button has toggled the class show-text */
+.show-text .minus-icon {
+  /* Minus button and text now visible after plus button has toggled the class show-text */
   display: inline;
 }
 .show-text .plus-icon {
   display: none;
-} 
+}
+/*
+=============== 
+About
+===============
+*/
+.about-img {
+  margin-bottom: 2rem;
+}
+.about-img img {
+  border-radius: var(--radius);
+  /* object-fit: cover; */
+  height: 20rem;
+}
+@media screen and (min-width: 992px) {
+  .about-img {
+    margin-bottom: 0;
+  }
+
+  .about-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 2rem;
+  }
+}
+.about {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.btn-container {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.tab-btn:nth-child(1) {
+  border-top-left-radius: var(--radius);
+}
+.tab-btn:nth-child(3) {
+  border-top-right-radius: var(--radius);
+}
+.tab-btn {
+  padding: 1rem 0;
+  border: none;
+  text-transform: capitalize;
+  font-size: 1rem;
+  display: block;
+  background: var(--clr-grey-9);
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: var(--spacing);
+}
+.tab-btn:hover:not(.active) {
+  background: var(--clr-primary-10);
+  color: var(--clr-primary-5);
+}
+.about-content {
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  padding: 2rem 1.5rem;
+}
+/* hide content */
+.content {
+  display: none;
+}
+.tab-btn.active {
+  background: var(--clr-white);
+}
+.content.active {
+  display: block;
+}
+
+/* Footer */
+
+footer {
+  background: var(--clr-grey-1);
+  padding: 2rem;
+  text-align: center;
+}
+footer p,
+footer a {
+  color: var(--clr-white);
+  letter-spacing: var(--spacing);
+  margin-bottom: 0;
+}
+
+.footer-link:hover,
+.social-list__link:hover {
+  opacity: 0.7;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+.social-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+  padding: 0;
+}
+.social-list__item {
+  margin: 0 0.5em;
+  font-size: 30px;
+}
+
+/*
+=============== 
+Scroll
+===============
+*/
+/* navbar */
+nav {
+  padding: 1rem 1.5rem;
+  color: aqua;
+}
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 50px;
+}
+.intro-image {
+  width: 180px !important;
+}
+.links-container {
+  height: 0; /* By default, we want to hide these links. */
+  overflow: hidden;
+  transition: var(--transition);
+  color: blue;
+}
+
+.links a {
+  background: var(--clr-white);
+  color: var(--clr-black);
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  display: block;
+  transition: var(--transition);
+  font-weight: bold;
+  padding: 0.75rem 0;
+}
+.links a:hover {
+  color: black;
+}
+@media screen and (min-width: 800px) {
+  nav {
+    background: transparent;
+    color: black;
+    text-decoration: black;
+  }
+  .nav-center {
+    width: 90vw;
+    max-width: 1170px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-header {
+    padding: 0;
+  }
+  .links-container {
+    height: auto !important; /* Without impotant tag, the inline css added by the JS would override the external stylesheet style. */
+  }
+  .links {
+    display: flex;
+  }
+  .links a {
+    background: transparent;
+    color: var(--clr-black);
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    letter-spacing: var(--spacing);
+    display: block;
+    transition: var(--transition);
+    margin: 0 1rem;
+    font-weight: bold;
+    padding: 0;
+  }
+  .links a:hover {
+    color: var(--clr-white);
+  }
+}

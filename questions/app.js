@@ -15,19 +15,16 @@
 const questions = document.querySelectorAll(".question");
 
 questions.forEach(function (question) {
-  //console.log(question); - returns all the questions.
   const btn = question.querySelector(".question-btn"); //From inside 'question' tag, query select the tags with the class .question-btn. - Cool!
   //console.log(btn);
 
   btn.addEventListener("click", function () {
     //Close the other question if a new one is opened, only one open at a time.
     questions.forEach(function (item) {
-      //console.log(item);
       if (item !== question) {
         item.classList.remove("show-text");
       }
     });
-
     question.classList.toggle("show-text");
   });
 });
@@ -53,7 +50,7 @@ btns.forEach(function (btn) {
 */
 
 //.parentElement just moves up a tag in the HTML tree,
-//meaning i can reference a div from one of its nested child div's.
+//meaning I can reference a div from one of its nested child div's.
 
 /* 
         addition for the tabs functionality

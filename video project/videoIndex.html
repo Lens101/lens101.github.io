@@ -15,8 +15,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <!-- Styles -->
-    <link rel="stylesheet" href="SnakeStyles.css" />
+    <link rel="stylesheet" href="videoStyles.css" />
     <!-- Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
     <a href="https://icons8.com/icon/dS3AHqapzenU/code"></a>
   </head>
 
@@ -51,7 +52,7 @@
     <!--Project container  -->
     <section class="section">
       <div class="title">
-        <h2>My classic snake game</h2>
+        <h2>About</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
           consequuntur quae consequatur, ab officiis illum repellendus impedit
@@ -59,9 +60,18 @@
           modi nemo itaque eius!
         </p>
       </div>
-      <div class="about-center section-center">
-        <article class="about-img">
-          <canvas id="gc" width="400" height="400"></canvas>
+      <div class="about-center">
+        <article class="about-video">
+          <video class="video-container" muted autoplay loop>
+            <source src="video.mp4" type="video/mp4" />
+          </video>
+
+          <!-- Video pause / play button -->
+          <button class="switch-btn">
+            <span>play</span>
+            <span>pause</span>
+            <span class="switch"></span>
+          </button>
         </article>
         <article class="about">
           <!-- Button container -->
@@ -175,6 +185,6 @@
       </p>
     </footer>
     <!-- Javascript -->
-    <script src="snakeApp.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

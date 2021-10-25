@@ -205,23 +205,11 @@ nav {
 About
 ===============
 */
-.title {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-.title p {
-  width: 80%;
-  margin: 0 auto;
-}
 
 .about-img {
   margin-bottom: 2rem;
 }
-.about-img img {
-  border-radius: var(--radius);
-  object-fit: cover;
-  height: 20rem;
-}
+
 @media screen and (min-width: 992px) {
   .about-img {
     margin-bottom: 0;
@@ -322,20 +310,16 @@ footer a {
 }
 
 .section-center {
-  width: 90vw;
+  width: 50vw;
   margin: 0 auto;
   max-width: 1170px;
 }
 @media screen and (min-width: 992px) {
   .section-center {
-    width: 95vw;
+    width: 50vw;
   }
 }
-main {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-}
+
 /*
 =============== 
 Questions
