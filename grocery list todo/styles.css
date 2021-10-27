@@ -430,6 +430,14 @@ About
   display: grid;
   grid-template-rows: auto 1fr;
 }
+@media screen and (max-width: 800px) {
+  .grocery-container {
+    padding-bottom: 30px;
+  }
+  .about {
+    padding-top: 30px;
+  }
+}
 
 .about-img img {
   border-radius: var(--radius);

@@ -41,7 +41,7 @@
                 <a href="javascript: history.go(-1)">Back to my projects</a>
               </li>
               <li>
-                <a href="/index.html">Home</a>
+                <a href="../index.html">Home</a>
               </li>
             </ul>
           </div>
@@ -51,17 +51,18 @@
     <!--Project container  -->
     <section class="section">
       <div class="title">
-        <h2>My classic snake game</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-          consequuntur quae consequatur, ab officiis illum repellendus impedit
-          explicabo culpa quaerat magni qui molestiae dignissimos facilis! Nobis
-          modi nemo itaque eius!
-        </p>
+        <h2>Snake</h2>
+        <p>A childhood classic!</p>
       </div>
       <div class="about-center section-center">
         <article class="about-img">
+          <div class="scoreboard">Score : <span id="scoreboard"></span></div>
           <canvas id="gc" width="400" height="400"></canvas>
+          <div class="controls board">
+            Controls: <br />
+            UP, DOWN, LEFT, RIGHT arrow keys to move. <br />
+            'p' to pause.
+          </div>
         </article>
         <article class="about">
           <!-- Button container -->
@@ -78,13 +79,18 @@
               <h4>Project Description</h4>
               <!-- history -->
               <p>
-                I'm baby wolf pickled schlitz try-hard normcore marfa man bun
-                mumblecore vice pop-up XOXO lomo kombucha glossier bicycle
-                rights. Umami kinfolk salvia jean shorts offal venmo. Knausgaard
-                tilde try-hard, woke fixie banjo man bun. Small batch tumeric
-                mustache tbh wayfarers 8-bit shaman chartreuse tacos. Viral
-                direct trade hoodie ugh chambray, craft beer pork belly flannel
-                tacos single-origin coffee art party migas plaid pop-up.
+                Written using canvas 2d and vanilla js, making this recreated a
+                small piece of my childhood.<br /><br />
+                Snake was always dear to me because of it's ubiquity, no matter
+                who's flip phone you were on, it had snake. <br /><br />
+                Really quite a simple implementation, it involves an edge looper
+                so you don't 'fall off' the map, some collision detection so
+                apples don't spawn inside the snake body and an array to keep
+                track of recent movements to make sure that you haven't bumped
+                into yourself and lost.<br /><br />
+                Also included is a very simple but i think important
+                functionality... the score! Without it the game doesn't have
+                that addictive feel!
               </p>
             </div>
             <!-- End of single item -->
@@ -94,21 +100,16 @@
               <h4>Challenges</h4>
               <!-- vision -->
               <p>
-                Man bun PBR&B keytar copper mug prism, hell of helvetica. Synth
-                crucifix offal deep v hella biodiesel. Church-key listicle
-                polaroid put a bird on it chillwave palo santo enamel pin,
-                tattooed meggings franzen la croix cray. Retro yr aesthetic four
-                loko tbh helvetica air plant, neutra palo santo tofu mumblecore.
-                Hoodie bushwick pour-over jean shorts chartreuse shabby chic.
-                Roof party hammock master cleanse pop-up truffaut, bicycle
-                rights skateboard affogato readymade sustainable deep v
-                live-edge schlitz narwhal.
+                The main challenge consisted of figuring our how to stop the
+                apples from spawning in the snakes body which by a default idea
+                of math.random() was occuring. <br /><br />
+                Subtler problems were figuring our how to pause the canvas on a
+                keypress, essentially pausing the loop if a key had been
+                pressed.<br /><br />
+                Also the simple problem of using arrow keys to navigate around
+                the canvas, but to not move the website around along with it
+                came up.
               </p>
-              <ul>
-                <li>list item</li>
-                <li>list item</li>
-                <li>list item</li>
-              </ul>
             </div>
             <!-- End of single item -->
 
@@ -117,15 +118,22 @@
               <h4>Solutions</h4>
               <!-- goals -->
               <p>
-                Chambray authentic truffaut, kickstarter brunch taxidermy vape
-                heirloom four dollar toast raclette shoreditch church-key.
-                Poutine etsy tote bag, cred fingerstache leggings cornhole
-                everyday carry blog gastropub. Brunch biodiesel sartorial mlkshk
-                swag, mixtape hashtag marfa readymade direct trade man braid
-                cold-pressed roof party. Small batch adaptogen coloring book
-                heirloom. Letterpress food truck hammock literally hell of wolf
-                beard adaptogen everyday carry. Dreamcatcher pitchfork yuccie,
-                banh mi salvia venmo photo booth quinoa chicharrones.
+                To stop the apple spawn issue, I kept the math.random()
+                function, but called it again if the apple coordinates existed
+                in the snake's tail array coordinates. If it did, call .random()
+                again, if not, spawn in the apple, simple!<br /><br />
+
+                An event listener, looking for a keyboard push for keyCode == 80
+                ('p'), and a loop wrapping the central game() function
+                determining whether the game was paused using a boolean solved
+                the pausing issue. <br /><br />
+
+                The final issue of moving the snake but not the webpage just
+                came about through a very quick look at Stack overflow and a
+                event listener e.preventDefault();<br /><br />
+
+                A very fun little project to work on in my free time, I will be
+                doing many more using canvas I can already tell!
               </p>
             </div>
             <!-- End of single item -->

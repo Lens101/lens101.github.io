@@ -118,6 +118,7 @@ p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
 }
+/* Above 800px ... */
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 4rem;
@@ -175,11 +176,8 @@ p {
 .section {
   padding-bottom: 5rem;
 }
-
-@media screen and (min-width: 992px) {
-  .section-center {
-    width: 95vw;
-  }
+.section-center {
+  width: 95vw;
 }
 main {
   min-height: 100vh;
@@ -194,6 +192,8 @@ Scroll
 /* navbar */
 nav {
   padding: 1rem 1.5rem;
+  background: var(--clr-white);
+  text-align: center;
 }
 /* fixed nav */
 .fixed-nav {
@@ -203,6 +203,7 @@ nav {
   width: 100%;
   background: var(--clr-white);
   box-shadow: var(--light-shadow);
+  z-index: 10;
 }
 .fixed-nav .links a {
   color: var(--clr-grey-1);
@@ -210,9 +211,7 @@ nav {
 .fixed-nav .links a:hover {
   color: var(--clr-secondary);
 }
-/* .fixed-nav .links-container {
-  height: auto !important;
-} */
+
 .nav-header {
   display: flex;
   align-items: center;
@@ -229,20 +228,13 @@ nav {
 .nav-toggle:hover {
   color: var(--clr-secondary);
 }
-.logo {
-  height: 50px;
-}
-.intro-image {
-  width: 180px !important;
-}
+
 .links-container {
   height: 0; /* By default, we want to hide these links. */
   overflow: hidden;
   transition: var(--transition);
 }
-.show-links {
-  height: 200px;
-}
+
 /* 
 No height propertyin links, so we can target this specifically
  when using getBoundingClientRect().height
@@ -261,25 +253,23 @@ No height propertyin links, so we can target this specifically
 .links a:hover {
   color: var(--clr-grey-1);
 }
+
+/* Above 800px... */
 @media screen and (min-width: 800px) {
   nav {
     background: transparent;
   }
   .nav-center {
-    width: 90vw;
-    max-width: 1170px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-  }
-  .nav-header {
-    padding: 0;
+    justify-content: center;
   }
   .nav-toggle {
     display: none;
   }
   .links-container {
     height: auto !important; /* Without impotant tag, the inline css added by the JS would override the external stylesheet style. */
+    text-align: center;
   }
   .links {
     display: flex;
@@ -299,7 +289,11 @@ No height propertyin links, so we can target this specifically
   .links a:hover {
     color: var(--clr-white);
   }
+  .logo {
+    width: 90%;
+  }
 }
+
 /* hero */
 header {
   min-height: 100vh;
@@ -321,13 +315,13 @@ header {
 }
 .container p {
   color: var(--clr-white);
-  max-width: 25rem;
   margin: 0 auto;
   margin-bottom: 1.25rem;
 }
-@media screen and (min-width: 768px) {
+
+@media screen and (min-width: 800px) {
   .container p {
-    max-width: 40rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -378,8 +372,8 @@ header {
   justify-content: space-around; /* Will put space around each element, inc top / bottom of container. */
 }
 
-/* For screens < 600px, flex the box downwards. */
-@media screen and (max-width: 600px) {
+/* For screens < 800px, flex the box downwards. */
+@media screen and (max-width: 799px) {
   .flex-container2 {
     flex-direction: column;
   }
@@ -388,6 +382,7 @@ header {
   }
   .column {
     width: 100%;
+    padding-top: 100px;
   }
 }
 
@@ -606,7 +601,15 @@ footer a {
 
 form {
   max-width: 500px;
-  width: 100%;
+  width: 70%;
+  z-index: 2;
+}
+
+/* Below 800 px */
+@media screen and (max-width: 800px) {
+  form {
+    width: 100%;
+  }
 }
 
 /* Form padding inbetween the form elements */

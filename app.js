@@ -11,15 +11,14 @@ date.innerHTML = new Date().getFullYear();
 const linksContainer = document.querySelector(".links-container");
 const navToggle = document.querySelector(".nav-toggle");
 const links = document.querySelector(".links");
+const nav = document.getElementById("nav");
 
 navToggle.addEventListener("click", function () {
   //linksContainer.classList.toggle("show-links"); //useful if not using dynamic data as can reference hardcoded css value.
 
   const containerHeight = linksContainer.getBoundingClientRect().height;
-  console.log(containerHeight); //-height will be 0, when closed, 200 when open(with 4 links)
+  //console.log(containerHeight); //-height will be 0, when closed, 200 when open(with 4 links)
   const linksHeight = links.getBoundingClientRect().height;
-
-  console.log(linksHeight); //height is 200 always! (with 4 links)
 
   //if true, dynamically add height to container.
   //this keeps the container dynamic depending on how many links are present in the link container.
