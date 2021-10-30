@@ -167,10 +167,14 @@ p {
   border-color: var(--clr-white);
   border-radius: 0;
   padding: 0.5rem 1rem;
+  border-radius: 10px;
 }
 .btn:hover {
   background: var(--clr-white);
   color: var(--clr-secondary);
+}
+.btn-white:hover {
+  transform: scale(1.2);
 }
 
 .section {
@@ -194,6 +198,10 @@ nav {
   padding: 1rem 1.5rem;
   background: var(--clr-white);
   text-align: center;
+}
+nav .links a:hover {
+  color: var(--clr-primary-1);
+  transform: scale(1.2);
 }
 /* fixed nav */
 .fixed-nav {
@@ -351,6 +359,12 @@ header {
 
 /* About section */
 
+.flex-container {
+  display: flex;
+  flex-wrap: wrap; /* Will wrap to next line if container can't contain all elements.*/
+  justify-content: space-around; /* Will put space around each element, inc top / bottom of container. */
+}
+
 .about {
   background: var(--clr-white);
   text-align: center;
@@ -359,9 +373,24 @@ header {
   padding: 5px;
 }
 .column {
-  float: left;
-  width: 30%;
-  box-shadow: 5px 10px 8px #888888;
+  width: 31%;
+  border-top: 1px solid #cdcdcd;
+  box-shadow: 2px 5px 5px #888888;
+  border-radius: 15px;
+  padding: 1em;
+}
+
+/* For screens < 800px, flex the box downwards. */
+@media screen and (max-width: 799px) {
+  .flex-container {
+    flex-direction: column;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .column {
+    width: 100%;
+    margin: 10px 0px 1em 0px;
+  }
 }
 
 /* Skills section */
@@ -372,17 +401,9 @@ header {
   justify-content: space-around; /* Will put space around each element, inc top / bottom of container. */
 }
 
-/* For screens < 800px, flex the box downwards. */
 @media screen and (max-width: 799px) {
   .flex-container2 {
     flex-direction: column;
-  }
-  .flex-container {
-    flex-direction: column;
-  }
-  .column {
-    width: 100%;
-    padding-top: 100px;
   }
 }
 
@@ -446,6 +467,9 @@ header {
   color: #616161;
   font-size: 14px;
 }
+.icon {
+  padding-top: 1em;
+}
 
 /* Portfolio work */
 
@@ -456,125 +480,49 @@ header {
   padding-bottom: 0;
 }
 
-/*
-Below 300px, this will stay at max width, but everything else will shrink around it.
-Thankfully, no phone on the chrome devtools has a width < 300.
-*/
 .portfolio {
   display: grid;
   /* Each grid has min size of 300px, but if has room to grow it will, I.E. repsonsive.*/
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  /* grid-template-columns: repeat(4, 1fr); */ /* Good, but doesn't handle small screens well  */
+  /* grid-template-columns: repeat(3, 1fr); */ /* Good, but doesn't handle small screens well  */
   padding: 5%;
+  gap: 4em 1rem;
+  font-family: var(--ff-secondary);
 }
 
-.portfolio__item {
+.portWrapper {
   padding: 2%;
   display: flex;
+  position: relative;
 }
-
-.portfolio__image {
-  display: block;
-  transition: all 750ms cubic-bezier(0.5, 0, 0.5, 1), opacity 250ms linear;
-  background-color: var(--clr-green-light);
-  overflow: hidden;
-  box-shadow: 2px 5px 5px #888888;
-  width: 100%;
-  height: 100%;
-}
-.portfolio-text {
-  align-self: center;
-  justify-self: center;
-}
-
-.portfolio__item > .portfolio__image {
-  width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-}
-.photo > img {
-  object-fit: cover;
-  width: 100%;
-  max-height: 100%;
-}
-
-.portfolio__item:focus {
+.portWrapper:hover {
+  transition: all 500ms cubic-bezier(0.5, 0, 0.5, 1), opacity 250ms linear;
+  opacity: 0.8;
+  transform: scale(1.05);
   position: relative;
   z-index: 2;
 }
 
-.portfolio__image:hover,
-.portfolio__item:focus .portfolio__image {
-  transform: scale(1.2);
-  opacity: 0.75;
+.portfolio__image {
+  display: block;
+  overflow: hidden;
+  box-shadow: 2px 5px 5px #888888;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
-/* Footer */
-
-footer {
-  background: var(--clr-grey-1);
-  padding: 2rem;
-  text-align: center;
-}
-footer p,
-footer a {
-  color: var(--clr-white);
-  letter-spacing: var(--spacing);
-  margin-bottom: 0;
-}
-
-.footer-link:hover,
-.social-list__link:hover {
-  opacity: 0.7;
-}
-
-.footer-link:hover {
-  text-decoration: underline;
-}
-.social-list {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin: 2em 0;
-  padding: 0;
-}
-.social-list__item {
-  margin: 0 0.5em;
-  font-size: 30px;
-}
-
-.top-link {
-  font-size: 1.25rem;
-  position: fixed;
-  bottom: 3rem;
-  right: 3rem;
-  background: var(--clr-secondary);
-  width: 2rem;
-  height: 2rem;
-  display: grid;
-  place-items: center;
-  border-radius: var(--radius);
-  color: var(--clr-white);
-  animation: bounce 2s ease-in-out infinite;
-
-  visibility: hidden; /* The link to top of page is hidden by default */
-  z-index: -100;
-}
-.show-link {
-  visibility: visible; /* Therefore must add show-link to the element class list at arbitrary scroll height to allow for visibility. */
-  z-index: 100;
-}
-
-@keyframes bounce {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
+.portfolio-text {
+  align-self: center;
+  justify-self: center;
+  background: var(--clr-primary-4);
+  color: #f5f5f5;
+  text-transform: uppercase;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding: 0.75rem 0.5rem;
+  box-shadow: 2px 5px 5px #888888;
 }
 
 /* CONTACT */
@@ -699,10 +647,84 @@ input[type="submit"] {
   text-align: center;
   transition: all 0.5s;
   font-size: 0.8em;
+  border-radius: 10px;
 }
 
 /* When mouse hover, add a color change */
 input[type="submit"]:hover {
   cursor: pointer;
   background-color: #02c2c7;
+  transform: scale(1.2);
+}
+
+/* Footer */
+
+footer {
+  background: var(--clr-grey-1);
+  padding: 2rem;
+  text-align: center;
+}
+footer p,
+footer a {
+  color: var(--clr-white);
+  letter-spacing: var(--spacing);
+  margin-bottom: 0;
+}
+
+.footer-link:hover,
+.social-list__link:hover {
+  opacity: 0.7;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+.social-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+  padding: 0;
+}
+.social-list__item {
+  margin: 0 0.5em;
+  font-size: 2.25rem;
+  transition: all 0.5s;
+}
+.social-list__item:hover {
+  transform: scale(1.5);
+}
+
+.top-link {
+  font-size: 1.25rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background: var(--clr-secondary);
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+  color: var(--clr-white);
+  animation: bounce 2s ease-in-out infinite;
+
+  visibility: hidden; /* The link to top of page is hidden by default */
+  z-index: -100;
+}
+.show-link {
+  visibility: visible; /* Therefore must add show-link to the element class list at arbitrary scroll height to allow for visibility. */
+  z-index: 100;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
