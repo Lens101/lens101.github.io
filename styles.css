@@ -4,7 +4,6 @@ Fonts
 ===============
 */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
-
 /*
 =============== 
 Variables
@@ -671,14 +670,19 @@ footer a {
   margin-bottom: 0;
 }
 
-.footer-link:hover,
-.social-list__link:hover {
-  opacity: 0.7;
-}
-
 .footer-link:hover {
   text-decoration: underline;
 }
+
+/* 
+=============================================
+=============================================
+=============================================
+      Styling for animated footer links
+=============================================
+=============================================
+=============================================
+*/
 .social-list {
   list-style: none;
   display: flex;
@@ -691,10 +695,71 @@ footer a {
   font-size: 2.25rem;
   transition: all 0.5s;
 }
-.social-list__item:hover {
-  transform: scale(1.5);
+
+.social-list .social-list__item .social-list__link {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  line-height: 70px;
+  font-size: 2.25rem;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  z-index: 1;
 }
 
+.social-list .social-list__item .social-list__link .icon3 {
+  position: relative;
+  color: #262626;
+  transition: 0.5s;
+  z-index: 3;
+}
+
+.social-list .social-list__item .social-list__link:hover .icon3 {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.social-list .social-list__item .social-list__link:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  z-index: 2;
+}
+.icon3 {
+  position: absolute;
+  top: 3%;
+  left: 2.5%;
+}
+
+.social-list .social-list__item .social-list__link:hover:before {
+  top: 0;
+}
+
+.social-list .social-list__item:nth-child(1) a:before {
+  background: black;
+}
+
+.social-list .social-list__item:nth-child(2) a:before {
+  background: indigo;
+}
+
+.social-list .social-list__item:nth-child(3) a:before {
+  background: #0077b5;
+}
+
+/* 
+======================================
+    Styling for the arrow up button
+======================================
+*/
 .top-link {
   font-size: 1.25rem;
   position: fixed;

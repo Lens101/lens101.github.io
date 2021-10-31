@@ -21,8 +21,7 @@
   </head>
 
   <body>
-    <!-- Header -->
-    <header id="home">
+
       <!-- navbar -->
       <nav id="nav">
         <div class="nav-center">
@@ -38,7 +37,7 @@
           <div class="links-container">
             <ul class="links">
               <li>
-                <a href="javascript: history.go(-1)">Back to my projects</a>
+                <a href="javascript: history.go(-1)">Back to projects</a>
               </li>
               <li>
                 <a href="/index.html">Home</a>
@@ -47,17 +46,11 @@
           </div>
         </div>
       </nav>
-    </header>
     <!--Project container  -->
     <section class="section">
       <div class="title">
         <h2>Grocery Bud ToDo List</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-          consequuntur quae consequatur, ab officiis illum repellendus impedit
-          explicabo culpa quaerat magni qui molestiae dignissimos facilis! Nobis
-          modi nemo itaque eius!
-        </p>
+        <p>A javascript CRUD application using local storage.</p>
       </div>
       <div class="about-center section-center">
         <article class="about-grocery">
@@ -93,15 +86,18 @@
             <!-- Single item -->
             <div class="content active" id="history">
               <h4>Project Description</h4>
-              <!-- history -->
+              <!-- Description -->
               <p>
-                I'm baby wolf pickled schlitz try-hard normcore marfa man bun
-                mumblecore vice pop-up XOXO lomo kombucha glossier bicycle
-                rights. Umami kinfolk salvia jean shorts offal venmo. Knausgaard
-                tilde try-hard, woke fixie banjo man bun. Small batch tumeric
-                mustache tbh wayfarers 8-bit shaman chartreuse tacos. Viral
-                direct trade hoodie ugh chambray, craft beer pork belly flannel
-                tacos single-origin coffee art party migas plaid pop-up.
+                Using vanilla JS, I created this ToDo app, which essentially
+                covers all the basic fucntions of JavaScript, to create, read,
+                update and delete "ToDo's" to and from a locally stored object.</br></br>
+                I decided against using a framework (really into Svelte atm)
+                because I wanted to prove to myself that I was capable of using
+                JS alone, without all the fancy plugins / frameworks to do all
+                the lifting for me. </br></br>There are some additional CSS features which
+                act as alerts to the user notifing them when an item has been
+                added, removed from their list, to aid in user understanding of
+                the app's current state.
               </p>
             </div>
             <!-- End of single item -->
@@ -109,40 +105,39 @@
             <!-- Single item -->
             <div class="content" id="vision">
               <h4>Challenges</h4>
-              <!-- vision -->
+              <!-- Project Challenges -->
               <p>
-                Man bun PBR&B keytar copper mug prism, hell of helvetica. Synth
-                crucifix offal deep v hella biodiesel. Church-key listicle
-                polaroid put a bird on it chillwave palo santo enamel pin,
-                tattooed meggings franzen la croix cray. Retro yr aesthetic four
-                loko tbh helvetica air plant, neutra palo santo tofu mumblecore.
-                Hoodie bushwick pour-over jean shorts chartreuse shabby chic.
-                Roof party hammock master cleanse pop-up truffaut, bicycle
-                rights skateboard affogato readymade sustainable deep v
-                live-edge schlitz narwhal.
+                One challenge involved adding editing to a selected ToDo, where
+                it would be modified on the screen but also locally, deleting
+                the local storage ID of the previous value.</br></br> Another challenge
+                involved addign the local storage itself, using JSON.Stringify()
+                to save the content as strings in order to edit them
+                effectively.</br></br> Dynamically adding in the html at runtime was
+                another hurdle as I had to understand Templating in order to
+                perform this well.
               </p>
-              <ul>
-                <li>list item</li>
-                <li>list item</li>
-                <li>list item</li>
-              </ul>
             </div>
             <!-- End of single item -->
 
             <!-- Single item -->
             <div class="content" id="goals">
               <h4>Solutions</h4>
-              <!-- goals -->
+              <!-- Project Solutions -->
               <p>
-                Chambray authentic truffaut, kickstarter brunch taxidermy vape
-                heirloom four dollar toast raclette shoreditch church-key.
-                Poutine etsy tote bag, cred fingerstache leggings cornhole
-                everyday carry blog gastropub. Brunch biodiesel sartorial mlkshk
-                swag, mixtape hashtag marfa readymade direct trade man braid
-                cold-pressed roof party. Small batch adaptogen coloring book
-                heirloom. Letterpress food truck hammock literally hell of wolf
-                beard adaptogen everyday carry. Dreamcatcher pitchfork yuccie,
-                banh mi salvia venmo photo booth quinoa chicharrones.
+              </br>
+                To dynamically add the html in I used templated strings, which
+                proved to be very useful.</br></br> I created a setBackToDefault()
+                function that I called at the end of every edit / delete / add
+                ToDo, to restore the system state to the start. This made the
+                development a lot simpler as I didn't need to repeatedly set all
+                these values. </br></br>After understanding DOM navigation, editing the
+                current event target's sibling elements proved to be a much
+                easier task. Allowing me to access the Todo 'grandparent'
+                container to get the dataset.id and remove a CSS property that
+                was showing the container. Then removing it within the JS.</br></br> I
+                decided to make the webpage be changed first through CSS hiding
+                elements, then remove using the JS, in case the user was on a
+                slow network.
               </p>
             </div>
             <!-- End of single item -->
@@ -163,7 +158,7 @@
               target="”_blank”"
               class="social-list__link"
             >
-              <i class="fab fa-github"></i>
+              <i class="fab fa-github icon3"></i>
             </a>
           </li>
           <li class="social-list__item">
@@ -172,16 +167,16 @@
               target="”_blank”"
               class="social-list__link"
             >
-              <i class="fa fa-codepen"></i>
+              <i class="fa fa-codepen icon3"></i>
             </a>
           </li>
-          <li class="social-list__item">
+          <li class="social-list__item ">
             <a
               href="https://www.linkedin.com/in/robert-harbord-66ab8b145/"
               target="”_blank”"
               class="social-list__link"
             >
-              <i class="fab fa-linkedin"></i>
+              <i class="fab fa-linkedin icon3"></i>
             </a>
           </li>
         </ul>
