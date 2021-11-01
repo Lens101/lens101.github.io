@@ -40,23 +40,22 @@ const logo = document.querySelector(".logo");
 
 // ********** fixed navbar ************
 window.addEventListener("scroll", function () {
-  //console.log(window.pageYOffset); //will log the curernt scroll value down the page.
+  //console.log(window.pageYOffset); //will log the current scroll value down the page.
   const scrollHeight = window.pageYOffset;
   const navHeight = navbar.getBoundingClientRect().height;
   if (scrollHeight > navHeight) {
     navbar.classList.add("fixed-nav"); //not .fixed-nav here when adding classes.
     /* console.log(navHeight); */
-    /* logo.classList.remove("transparent-logo"); */
   } else {
     navbar.classList.remove("fixed-nav");
-    /* logo.classList.add("transparent-logo"); */
   }
-  if (scrollHeight > 1300) {
-    topLink.classList.add("show-link");
-  } else {
-    topLink.classList.remove("show-link");
+  if (topLink) {
+    if (scrollHeight > 1300) {
+      topLink.classList.add("show-link");
+    } else {
+      topLink.classList.remove("show-link");
+    }
   }
-
   //if the value of window.pageYOffset > navbar.height, then change navbar class to be not transparent, and fixed.
 });
 //Problem created!:
@@ -86,7 +85,7 @@ scrollLinks.forEach(function (link) {
     const fixedNav = navbar.classList.contains("fixed-nav");
 
     let position = element.offsetTop - navHeight;
-    //console.log(position);
+    /* console.log(position); */
     //if the nav is not fixed, take away the nav height from the position of the screen scroll.
     if (!fixedNav) {
       position = position - navHeight;

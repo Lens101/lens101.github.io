@@ -1,10 +1,4 @@
-/*
-=============== 
-Fonts
-===============
-*/
-@import url(/styles.css);
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url("/styles.css");
 
 /* section */
 .section {
@@ -252,7 +246,6 @@ About
 }
 .tab-btn {
   padding: 1rem 0;
-  border: none;
   text-transform: capitalize;
   font-size: 1rem;
   display: block;
@@ -270,6 +263,7 @@ About
   border-bottom-right-radius: var(--radius);
   padding: 2rem 1.5rem;
 }
+
 /* hide content */
 .content {
   display: none;
@@ -279,4 +273,13 @@ About
 }
 .content.active {
   display: block;
+}
+
+@media screen and (max-width: 500px) {
+  .btn-container {
+    font-size: 1rem;
+  }
+  .tab-btn {
+    font-size: 0.75rem;
+  }
 }

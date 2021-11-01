@@ -16,38 +16,40 @@
     />
     <!-- Styles -->
     <link rel="stylesheet" href="SnakeStyles.css" />
+
     <!-- Icon -->
     <a href="https://icons8.com/icon/dS3AHqapzenU/code"></a>
   </head>
 
   <body>
     <!-- Header -->
-    <header id="home">
-      <!-- navbar -->
-      <nav id="nav">
-        <div class="nav-center">
-          <!-- nav header -->
-          <div class="nav-header">
-            <!-- Logo -->
-            <img
-              src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-code-coding-kiranshastry-lineal-kiranshastry.png"
-              class="logo"
-            />
-          </div>
-          <!-- Links -->
-          <div class="links-container">
-            <ul class="links">
-              <li>
-                <a href="javascript: history.go(-1)">Back to my projects</a>
-              </li>
-              <li>
-                <a href="../index.html">Home</a>
-              </li>
-            </ul>
-          </div>
+    <!-- navbar -->
+    <nav id="nav">
+      <div class="nav-center">
+        <!-- nav header -->
+        <div class="nav-header">
+          <!-- Logo -->
+          <img
+            src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-code-coding-kiranshastry-lineal-kiranshastry.png"
+            class="logo"
+          />
+          <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
-      </nav>
-    </header>
+        <!-- Links -->
+        <div class="links-container">
+          <ul class="links">
+            <li>
+              <a href="javascript: history.go(-1)">Back to my projects</a>
+            </li>
+            <li>
+              <a href="../index.html">Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <!--Project container  -->
     <section class="section">
       <div class="title">
@@ -148,16 +150,16 @@
           <i class="fas fa-paper-plane"></i> Robertharbord@hotmail.com
         </a>
         <ul class="social-list">
-          <li class="social-list__item icon3">
+          <li class="social-list__item">
             <a
               href="https://github.com/Lens101"
               target="”_blank”"
               class="social-list__link"
             >
-              <i class="fab fa-github"></i>
+              <i class="fab fa-github icon3"></i>
             </a>
           </li>
-          <li class="social-list__item icon3">
+          <li class="social-list__item">
             <a
               href="https://codepen.io/lxnslyfe/pens/"
               target="”_blank”"
@@ -183,6 +185,7 @@
       </p>
     </footer>
     <!-- Javascript -->
+    <script src="/app.js"></script>
     <script src="snakeApp.js"></script>
   </body>
 </html>
