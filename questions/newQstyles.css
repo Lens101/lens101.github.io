@@ -170,17 +170,12 @@ About
 .content.active {
   display: block;
 }
-/* 
 
-/*
-=============== 
-Scroll
-===============
-*/
 /* navbar */
 .links a {
   color: black;
 }
+/* Project desc container */
 @media screen and (max-width: 500px) {
   .btn-container {
     font-size: 1rem;

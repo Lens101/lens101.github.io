@@ -9,10 +9,10 @@
 
 /* section */
 .section {
-  padding: 5rem 0;
+  padding: 1em;
   padding-right: 5%;
   padding-left: 5%;
-  padding-bottom: 0;
+  padding-bottom: 1em;
 }
 .section-center {
   width: 50vw;
