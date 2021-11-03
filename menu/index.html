@@ -108,8 +108,9 @@
               <!-- Description -->
               <p>
                 The project has the menu items stored locally as an array of objects, mimicing an AJAX response.
-                I wanted to create a filtering menu that can be edited on a server and the javascript will interpret the api call 
-              </p>
+                I wanted to create a filtering menu that can be edited on a server and the javascript will interpret the api call and display the available foods, this could be expanded to
+                show certain foods based on the time the user is looking at the page, e.g. breakfast befroe noon, lunch until 5, and then the dinner menu. <br><br>
+                I really wanted this to be a project that could be easily reproduced for many use cases, not just restaurants based on foods available, but any filtering requirement.
             </div>
             <!-- End of single item -->
 
@@ -118,9 +119,9 @@
               <h4>Challenges</h4>
               <!-- Project Challenges -->
               <p>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-               Commodi modi veniam dicta, itaque debitis voluptas rerum nam, ipsam unde facilis 
-               impedit cum explicabo accusamus adipisci quaerat suscipit ratione numquam iusto!
+               The project needed to make use of dynamically adding html to the page, with different values depending on the values in the array object. <br><br>
+              I wanted to make the system completely responsive, including which buttons are displayed depending on the server response, as there's no point returning an empty filter for steaks, 
+              if none were available in the first place. Better to just remove the option and remove the FOMO.
               </p>
             </div>
             <!-- End of single item -->
@@ -130,9 +131,10 @@
               <h4>Solutions</h4>
               <!-- Project Solutions -->
               <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-               Commodi modi veniam dicta, itaque debitis voluptas rerum nam, ipsam unde facilis 
-               impedit cum explicabo accusamus adipisci quaerat suscipit ratione numquam iusto!
+              I used template literals inside a map() function to add the object data into the HTML via javascript at runtime. <br><br>
+              To add the buttons based on what food was available I used a map() method, and grabbed the object.category property and comapred it for uniqueness, if unique, add it to the categories array, and create a new button. <br><br>
+              Unsurpisingly, I used a filter() method to return the object.category's which === the filter buttons ID. Finally I displayed the whole menu so the use could scroll without needing to know the filter functionality.
+
               </p>
             </div>
             <!-- End of single item -->

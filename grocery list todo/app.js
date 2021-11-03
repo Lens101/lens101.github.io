@@ -22,6 +22,7 @@ clearBtn.addEventListener("click", clearItems);
 
 //load items
 window.addEventListener("DOMContentLoaded", setupItems);
+
 // ****** FUNCTIONS **********
 function addItem(e) {
   e.preventDefault(); //prevent the default behaviour of the form to attempt to submit to a server.
@@ -218,6 +219,7 @@ function createListItem(id, value) {
 const about = document.querySelector(".about");
 const btns = document.querySelectorAll(".tab-btn");
 const articles = document.querySelectorAll(".content");
+const firstTab = document.getElementById("first");
 
 about.addEventListener("click", function (e) {
   const id = e.target.dataset.id;

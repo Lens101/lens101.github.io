@@ -170,7 +170,7 @@ p {
 }
 .btn:hover {
   background: var(--clr-white);
-  color: var(--clr-secondary);
+  color: var(--clr-primary-4);
 }
 .btn-white:hover {
   transform: scale(1.2);
@@ -216,7 +216,7 @@ nav .links a:hover {
   color: var(--clr-grey-1);
 }
 .fixed-nav .links a:hover {
-  color: var(--clr-secondary);
+  color: var(--clr-primary-4);
 }
 
 .nav-header {
@@ -233,7 +233,7 @@ nav .links a:hover {
   cursor: pointer;
 }
 .nav-toggle:hover {
-  color: var(--clr-secondary);
+  color: var(--clr-primary-4);
 }
 
 .links-container {
@@ -340,7 +340,7 @@ header {
   padding-bottom: 2em;
 }
 .title span {
-  color: var(--clr-secondary);
+  color: var(--clr-primary-4);
 }
 
 .contactTitle h2 {
@@ -350,7 +350,7 @@ header {
   padding-bottom: 0;
 }
 .contactTitle span {
-  color: var(--clr-secondary);
+  color: var(--clr-primary-4);
 }
 #services {
   background: var(--clr-white);
@@ -552,6 +552,76 @@ form {
   z-index: 2;
 }
 
+/* Form animations */
+
+.formpadding span {
+  position: absolute;
+  background-color: #00a3a3;
+  transition: transform 0.5s ease;
+}
+
+.bottom,
+.top {
+  height: 1.5px;
+  left: 0;
+  right: 0;
+  transform: scaleX(0);
+}
+
+.left,
+.right {
+  width: 1.5px;
+  top: 0;
+  bottom: 0;
+  transform: scaleY(0);
+}
+
+.bottom {
+  bottom: 0;
+  transform-origin: bottom right;
+}
+
+input:focus ~ .bottom,
+textarea:focus ~ .bottom {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+.right {
+  right: 0;
+  transform-origin: top right;
+}
+
+input:focus ~ .right,
+textarea:focus ~ .right {
+  transform-origin: bottom right;
+  transform: scaleY(1);
+}
+
+.top {
+  top: 0;
+  transform-origin: top left;
+}
+
+input:focus ~ .top,
+textarea:focus ~ .top {
+  transform-origin: top right;
+  transform: scaleX(1);
+}
+
+.left {
+  left: 0;
+  transform-origin: bottom left;
+}
+
+input:focus ~ .left,
+textarea:focus ~ .left {
+  transform-origin: top left;
+  transform: scaleY(1);
+}
+
+/* End form animations */
+
 /* Below 800 px */
 @media screen and (max-width: 800px) {
   form {
@@ -589,12 +659,6 @@ textarea:-webkit-autofill {
 input:focus,
 textarea:focus {
   outline: none;
-}
-
-.formpadding span {
-  position: absolute;
-  background-color: #3cefff;
-  transition: transform 0.5s ease;
 }
 
 label {
@@ -652,7 +716,7 @@ input[type="submit"] {
 /* When mouse hover, add a color change */
 input[type="submit"]:hover {
   cursor: pointer;
-  background-color: #02c2c7;
+  background-color: var(--clr-primary-4);
   transform: scale(1.2);
 }
 
@@ -765,7 +829,7 @@ footer a {
   position: fixed;
   bottom: 3rem;
   right: 3rem;
-  background: var(--clr-secondary);
+  background: var(--clr-primary-4);
   width: 2rem;
   height: 2rem;
   display: grid;
