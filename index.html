@@ -5,6 +5,11 @@
     <!-- Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+        name="description"
+        content="I'm Robert Harbord, a front end engineer, with a focus on accessibilty and responsive design, send me a message in the contact section!"
+    />
+    <meta>
     <title>Hello, I am Robert Harbord, a front-end developer. This is my portfolio site.</title>
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
@@ -12,7 +17,9 @@
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
     <!-- Icon -->
-    <a href="https://icons8.com/icon/dS3AHqapzenU/code"></a>
+    <link rel="icon" href="https://icons8.com/icon/dS3AHqapzenU/code" aria-label="link for the icon" />
+    <!-- Prevent favicon 404 -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo="> 
 </head>
 
 <body>
@@ -25,9 +32,9 @@
                 <div class="nav-header">
                     <!-- Logo -->
                     <div class="logo">
-                    <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-code-coding-kiranshastry-lineal-kiranshastry.png" class="logo"/>
+                    <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-code-coding-kiranshastry-lineal-kiranshastry.png" class="logo" alt="A logo showing a computer and mobile phone"/>
                     </div>
-                    <button class="nav-toggle">
+                    <button class="nav-toggle" aria-label="toggle navigation button">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -47,11 +54,10 @@
         <div class="banner">
             <div class="container">
                 <h1>
-                    <!-- class="section__title section__title--intro" -->
                     Hi, I am <strong>Robert Harbord.</strong>
                 </h1>
                 <p>
-                    <!-- class="section__subtitle section__subtitle--intro" -->Front-end developer
+                    Front-end developer
                 </p>
                 <a href="#projects" class="scroll-link btn btn-white">My Projects</a>
             </div>
@@ -71,36 +77,36 @@
                     <p>
                     I have a diploma in computer science from the University of East Anglia.<br>
                     I am currently learning React and Django and I am hopeful to be able to use them in a professional
-                    setting soon. 
+                    setting soon. <br>
                     <i>For a full resume, please refer to my
                     <a href="https://www.linkedin.com/in/robert-harbord-66ab8b145/" target=”_blank”>LinkedIn</a>
                     or <a href="/CV.pdf" target=”_blank”> download </a> a copy.
                     </i>
                     </p>
-                
             </div>
+
             <div class="column">
                 <div class="icon">
-                <span class="fas fa-code spancss"></span>
-                <h3>My interests</h3>
+                    <span class="fas fa-code spancss"></span>
+                    <h3>My interests</h3>
                 </div>
-                    <p> 
+                <p>
                     My career interests involve responsive mobile first web design, Artificial intelligence, and robotics.<br>
                     I'm also heavily interested in accessibilty, the web is a place for everyone, I intend to help keep it that way.<br>
                     I'm also a coffee fiend, often finding it hard to distract myself from a big project after a double espresso!
                 </p>
             </div>
-        
-        <div class="column">
-          <div class="icon">
-            <span class="fas fa-book spancss"></span>
-            <h3>Always Improving</h3>
-          </div>
-          <p>
-            Outside of work I am a keen sportsman and hockey coach, with a passion for motivating others to get
-            the best out of themselves. I pride myself on my ability to communicate empathetically and articulately.
-          </p>
-        </div>
+
+            <div class="column">
+                <div class="icon">
+                    <span class="fas fa-book spancss"></span>
+                    <h3>Always Improving</h3>
+                </div>
+                <p>
+                    Outside of work I am a keen sportsman and hockey coach, with a passion for motivating others to get
+                    the best out of themselves. I pride myself on my ability to communicate empathetically and articulately.
+                </p>
+            </div>
         </div>
     </section>
     <!-- SKILLS SECTION -->
@@ -158,8 +164,14 @@
             <div class="portWrapper">
                 <div class="portfolio__item">
                     <a href="./grocery list todo/groceryToDo.html">
-                        <img src="images/grocerybud.jpg" alt=""  class="portfolio__image">
-                        <div class="portfolio-text">ToDo grocery list</div>
+                        <img 
+                            src="images/grocerybud 400 225.jpg"
+                            data-src="images/grocerybud 400 225.jpg" 
+                            alt="CRUD application project image"  
+                            class="portfolio__image lazyload">
+                            <div class="portfolio-text">
+                            ToDo grocery list
+                            </div>
                     </a>
                 </div>
             </div>
@@ -167,8 +179,15 @@
             <div class="portWrapper">
                 <div class="portfolio__item">
                     <a href="./snake game/snake.html">
-                        <img src="images/snake game.jpg" alt="Snake game" class="portfolio__image">
-                        <div class="portfolio-text">JavaScript snake game</div>
+                        <img 
+                            src="images/snake game 400 225.jpg"
+                            data-src="images/snake game 400 225.jpg"
+                            alt="Snake game image"
+                            class="portfolio__image lazyload">
+                             
+                            <div class="portfolio-text">
+                                JavaScript snake game
+                            </div>
                     </a>
                 </div>
             </div>
@@ -176,36 +195,60 @@
             <div class="portWrapper">
                 <div class="portfolio__item">
                     <a href="./menu/index.html">
-                        <img src="images/menu.jpg" alt=""  class="portfolio__image">
-                        <div class="portfolio-text">Menu filtering</div>
+                        <img
+                            src="images/menu 400 225.jpg"
+                            data-src="images/menu 400 225.jpg"
+                            alt="Menu filtering project image"
+                            class="portfolio__image lazyload">
+                            <div class="portfolio-text">
+                                Menu filtering
+                            </div>
                     </a>
                 </div>
             </div>
             <!--Portfolio item 04-->
             <div class="portWrapper">
                 <div class="portfolio__item">
-                <a href="./questions/questionsPage.html">
-                    <img src="images/questions.jpg" alt=""  class="portfolio__image">
-                    <div class="portfolio-text">Questions page</div>
-                </a>
+                    <a href="./questions/questionsPage.html">
+                        <img 
+                            src="images/questions 400 225.jpg"
+                            data-src="images/questions 400 225.jpg"
+                            alt="FAQ page project image"
+                            class="portfolio__image lazyload">
+                            <div class="portfolio-text">
+                                Questions page
+                            </div>
+                    </a>
                 </div>
             </div>
             <!--Portfolio item 05-->
             <div class="portWrapper">
                 <div class="portfolio__item">
-                <a href="./video project/videoIndex.html">
-                    <img src="./images/videoproject.jpg" alt=""  class="portfolio__image">
-                    <div class="portfolio-text">video project</div>
-                </a>
+                    <a href="./video project/videoIndex.html">
+                        <img
+                            src="images/videoproject 400 225.jpg"
+                            data-src="./images/videoproject 400 225.jpg"
+                            alt="Video project image"
+                            class="portfolio__image lazyload">
+                            <div class="portfolio-text">
+                                video project
+                            </div>
+                    </a>
                 </div>
             </div>
             <!--Portfolio item 06-->
             <div class="portWrapper">
                 <div class="portfolio__item">
-                <a href="./color flipper/index.html" >
-                    <img src="images/colorFlipper.jpg" alt=""  class="portfolio__image">
-                    <div class="portfolio-text">Background colour flipper</div>
-                </a>
+                    <a href="./color flipper/index.html" >
+                        <img 
+                            src="images/colorFlipper 400 225.jpg"
+                            data-src="images/colorFlipper 400 225.jpg"
+                            alt="background colour flipper project image"
+                            class="portfolio__image lazyload">
+                            <div class="portfolio-text">
+                                Background colour flipper
+                            </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -239,8 +282,7 @@
 
                 <label for="message">Your Message</label>
                 <div class="formpadding">
-                    <textarea class="form-input" name="message" id="message" 
-                        ></textarea>
+                    <textarea class="form-input" name="message" id="message"></textarea>
                     <span class="bottom"></span>
                     <span class="left"></span>
                     <span class="top"></span>
@@ -249,18 +291,12 @@
                 <input class="form-input" type="submit" value="SUBMIT" />
         </div>
 
-        <!-- TODO: Hide using js by default, if error show, if sucess show other msg -->
-        <!-- 
+        <!-- TODO: Hide using js by default, if error show, if sucess show other msg 
 
-          <span class="error" style="text-align: center"
-            >Form submission failed, try again later</span>
-            
-          <span class="success" style="text-align: center"
-            >Thank you for reaching out!</span>
-        </form>
-      </div>
+          <span class="error" style="text-align: center">           Form submission failed, try again later     </span>
+          <span class="success" style="text-align: center">         Thank you for reaching out!                 </span>
 
--->
+        -->
 
         <!-- End Contact me -->
     </section>
@@ -274,18 +310,18 @@
             </a>
             <ul class="social-list">
                 <li class="social-list__item">
-                    <a href="https://github.com/Lens101" target=”_blank” class="social-list__link">
+                    <a href="https://github.com/Lens101" target=”_blank” class="social-list__link" aria-label="github link">
                         <i class="fab fa-github icon3"></i>
                     </a>
                 </li>
                 <li class="social-list__item">
-                    <a href="https://codepen.io/lxnslyfe/pens/" target=”_blank” class="social-list__link">
+                    <a href="https://codepen.io/lxnslyfe/pens/" target=”_blank” class="social-list__link" aria-label="codepen link">
                         <i class="fa fa-codepen icon3"></i>
                     </a>
                 </li>
                 <li class="social-list__item">
                     <a href="https://www.linkedin.com/in/robert-harbord-66ab8b145/" target=”_blank”
-                        class="social-list__link">
+                        class="social-list__link" aria-label="linkedIn link">
                         <i class="fab fa-linkedin icon3"></i>
                     </a>
                 </li>
@@ -296,13 +332,14 @@
             <span id="date"></span>. All rights reserved
         </p>
     </footer> 
-    <a class="scroll-link top-link" href="#home">
+    <a class="scroll-link top-link" href="#home" aria-label="link to the top of the page">
         <i class="fas fa-arrow-up"></i>
     </a>
     <!-- Javascript -->
     <script src="app.js"></script>
+    <script src="lazysizes.min.js" async></script>
     <!-- What doe this rly do tho? -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"> -->
 </script>
 </body>
 

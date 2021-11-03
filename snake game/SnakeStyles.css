@@ -156,3 +156,9 @@ footer a {
     font-size: 0.75rem;
   }
 }
+
+@media screen and (max-width: 440px) {
+  .tabs-container {
+    margin-left: 1em;
+  }
+}

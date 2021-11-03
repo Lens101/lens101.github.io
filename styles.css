@@ -296,9 +296,11 @@ No height propertyin links, so we can target this specifically
   .links a:hover {
     color: var(--clr-white);
   }
-  .logo {
-    width: 90%;
-  }
+}
+
+.logo {
+  height: 64px;
+  width: 64px;
 }
 
 /* hero */
@@ -346,7 +348,7 @@ header {
 .contactTitle h2 {
   text-align: center;
   text-transform: uppercase;
-  padding-top: 1em;
+  padding-top: 2em;
   padding-bottom: 0;
 }
 .contactTitle span {
@@ -370,6 +372,7 @@ header {
 }
 .about p {
   padding: 5px;
+  color: var(--clr-primary-1);
 }
 .column {
   width: 31%;
@@ -485,13 +488,11 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   /* grid-template-columns: repeat(3, 1fr); */ /* Good, but doesn't handle small screens well  */
   padding: 5%;
-  gap: 4em 1rem;
+  gap: 1em 1rem;
   font-family: var(--ff-secondary);
 }
 
-.portWrapper {
-  padding: 2%;
-  display: flex;
+.portWrapper a {
   position: relative;
 }
 .portWrapper:hover {
@@ -515,7 +516,7 @@ header {
 .portfolio-text {
   align-self: center;
   justify-self: center;
-  background: var(--clr-primary-4);
+  background: var(--clr-primary-1);
   color: #f5f5f5;
   text-transform: uppercase;
   border-bottom-right-radius: 15px;
@@ -580,6 +581,8 @@ form {
   bottom: 0;
   transform-origin: bottom right;
 }
+
+/* ~ Selects general siblings of .bottom element */
 
 input:focus ~ .bottom,
 textarea:focus ~ .bottom {
@@ -700,7 +703,7 @@ input[type="submit"] {
   cursor: pointer;
   display: inline-block;
   border: 0.1em solid #ffffff;
-  background-color: hsl(205, 90%, 76%);
+  background-color: var(--clr-primary-1);
   padding: 10px 30px;
   margin: 5px 0 0 0;
   box-sizing: border-box;
@@ -759,7 +762,11 @@ footer a {
   font-size: 2.25rem;
   transition: all 0.5s;
 }
-
+@media screen and (max-width: 700px) {
+  .social-list__item {
+    margin: 0;
+  }
+}
 .social-list .social-list__item .social-list__link {
   width: 80px;
   height: 80px;
@@ -797,6 +804,8 @@ footer a {
   transition: 0.5s;
   z-index: 2;
 }
+
+/* footer icon not centered in it's container circle without this. */
 .icon3 {
   position: absolute;
   top: 3%;
