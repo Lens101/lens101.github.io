@@ -66,7 +66,8 @@ html {
 ::after,
 ::before {
   margin: 0;
-  padding: 0;
+  /* Makes the icon slightly more spread from the my projects text */
+  /* padding: 0; */
   box-sizing: border-box;
 }
 body {
@@ -269,7 +270,7 @@ No height propertyin links, so we can target this specifically
   .nav-center {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
   }
   .nav-toggle {
     display: none;
@@ -277,6 +278,7 @@ No height propertyin links, so we can target this specifically
   .links-container {
     height: auto !important; /* Without impotant tag, the inline css added by the JS would override the external stylesheet style. */
     text-align: center;
+    margin: 0 auto;
   }
   .links {
     display: flex;
@@ -535,11 +537,41 @@ header {
   box-shadow: 2px 5px 5px #888888;
 }
 
+/* Lighthouse report */
+
+.lighthouse-title h2 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.lighthouse-title span {
+  color: var(--clr-primary-4);
+}
+
+.lighthouse-report {
+  margin: 0 auto;
+  width: 40%;
+}
+
+.lighthouse-image {
+  border-radius: 35px;
+}
+.lighthouse-text {
+  text-align: center;
+  align-self: center;
+}
+@media screen and (max-width: 800px) {
+  .lighthouse-report {
+    flex-direction: column;
+    width: 60%;
+  }
+}
 /* CONTACT */
 
 .contact {
   padding-bottom: 10px !important;
-  background-color: #f5f5f5;
+  background-color: white;
 }
 
 /* Form padding */

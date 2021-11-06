@@ -120,7 +120,7 @@ function setBackToDefault() {
 function addToLocalStorage(id, value) {
   const grocery = { id, value }; //object but ES6 syntax allows us to not write {id:id, value:value}  where property:parameter is syntax.
   let items = getLocalStorage();
-  console.log(items);
+  /* console.log(items); */
   items.push(grocery);
   localStorage.setItem("list", JSON.stringify(items));
 }
@@ -154,9 +154,9 @@ function getLocalStorage() {
 }
 
 //local storage API
-//setItem
-//getItem
+//addItem
 //removeItem
+//editItem
 //save as strings
 
 /* 
@@ -183,7 +183,7 @@ function createListItem(id, value) {
   element.classList.add("grocery-item");
 
   // Add ID
-  const attr = document.createAttribute("data-id"); //previously would make this inthe html but now making, on the fly.
+  const attr = document.createAttribute("data-id"); //previously would make this in the html but now making, on the fly.
   attr.value = id;
   element.setAttributeNode(attr);
   element.innerHTML = `<p class="title">${value}</p>
@@ -196,7 +196,7 @@ function createListItem(id, value) {
               </button>
             </div>`;
 
-  //N.B. must be added aafter the page is loaded dynamically!
+  //N.B. must be added after the page is loaded dynamically!
 
   const deleteBtn = element.querySelector(".delete-btn");
   const editBtn = element.querySelector(".edit-btn");
@@ -206,7 +206,8 @@ function createListItem(id, value) {
   // Append child
   list.appendChild(element);
 }
-//  empty string is falsy!
+
+//  empty string === false
 
 /* 
         addition for the tabs functionality

@@ -100,13 +100,12 @@ window.addEventListener("DOMContentLoaded", function () {
 //display the all the items on the menu.
 function displayMenuItems(menuItems) {
   let displayMenu = menuItems.map(function (item) {
-    //.map is an array method
-
     //console.log(item);//This will log the 'menu' array indiviually as objects.
-
     //Returning template literals with variable substitution directly into the HTML.
+
     //Syntax: ${param.property}
     //use backticks to directly input the HTML dynamically, i.e. this would change if the menu changed also.
+
     return `<article class="menu-item">
         <img src = ${item.img} class="photo" alt="menu-item">
         <div class="item-info">
@@ -122,7 +121,7 @@ function displayMenuItems(menuItems) {
   //.join() returns a string from the menu array which is now an array of HTML elements.
   displayMenu = displayMenu.join(""); //empty string necessary otherwise there will be commas seperating each object in the array.
 
-  sectionCenter.innerHTML = displayMenu;
+  sectionCenter.innerHTML = displayMenu; //display to html page.
   //console.log(displayMenu); - Logs everything with the HTML tags embedded.
 }
 
@@ -157,7 +156,6 @@ function displayMenuButtons() {
   //filter menu items based on button click
   filterBtns.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
-      //console.log(e.currentTarget.dataset.id);
       //sets category (on click) as the current button dataset id taken from the HTML classname.
       const category = e.currentTarget.dataset.id;
 
@@ -168,7 +166,6 @@ function displayMenuButtons() {
           return menuItem;
         }
       });
-      //console.log(menuCategory);
 
       /*
             As none of the objects have a category of 'all' we would have to redo 
@@ -186,17 +183,16 @@ function displayMenuButtons() {
 }
 /*
 Array.join()
+
 The join() method creates and returns a new string by concatenating all of the elements in an
 array (or an array-like object), separated by commas or a specified separator string.
 If the array has only one item, then that item will be returned without using the separator.
-
 
 Array.map()
 
 .map() creates a new array by performing a function on each array element
 .map() doesn't execute the function for array elements without values.
 .map() doesn't change the original array.
-
 
 Array.filter()
 
@@ -208,8 +204,6 @@ Array.reduce()
 The reduce() method executes a user-supplied “reducer” callback function on each element of the array,
 passing in the return value from the calculation on the preceding element.
 The final result of running the reducer across all elements of the array is a single value.
-
-
 
 If you add something dynamically, you can only access it once it has been added to the DOM/HTML.
 */
