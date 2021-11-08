@@ -2,28 +2,132 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-width: 1920px;
 }
-body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  background: #e0eafc; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #e0eafc, #cfdef3);
-  background: linear-gradient(to left, #e0eafc, #cfdef3);
-  font-family: sans-serif;
-  color: black;
-  margin-bottom: 3em;
-  margin-top: 3em;
-}
-
-main {
-  border-top: 2px solid cornflowerblue;
-}
-header h1 {
+h3 {
   text-align: center;
+  padding: 1em;
+  font-size: 1.3rem;
 }
 .btn-container + {
   padding: 2em;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Open Sans", sans-serif;
+  background-image: url("https://source.unsplash.com/1929x800/?landscape");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-size: cover;
+}
+
+.card {
+  background: #000000d0;
+  color: white;
+  padding: 2em;
+  border-radius: 2rem;
+
+  margin: 0 auto;
+}
+
+.search {
+  padding-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  margin: 0.5em;
+  border-radius: 50%;
+  border: none;
+  height: 44px;
+  width: 44px;
+  outline: none;
+  background: #7c7c7c2b;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.search-bar {
+  border: none;
+  outline: none;
+  padding: 0.4em 1em;
+  background: #7c7c7c2b;
+  color: white;
+  font-family: inherit;
+  font-size: 1.5rem;
+  width: calc(100% - 6em);
+  border-radius: 2rem;
+}
+
+button:hover {
+  background: #7c7c7c6b;
+}
+
+h1.temp {
+  margin: 0;
+  margin-bottom: 0.4em;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.description {
+  text-transform: capitalize;
+  margin-left: 8px;
+}
+
+.weather.loading {
+  visibility: hidden;
+  max-height: 20px;
+  position: relative;
+}
+
+p {
+  padding-bottom: 3px;
+}
+
+col {
+  padding: 1em;
+  align-self: center;
+  width: 80%;
+}
+.insert-content {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  align-content: center;
+  text-align: center;
+}
+.insert-content .col {
+  padding-right: 1em;
+  padding-top: 2em;
+}
+.cardOne {
+  background: #000000d0;
+  color: white;
+  padding: 2em;
+  border-radius: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+.cardTwo {
+  background: #000000d0;
+  color: white;
+  padding: 2em;
+  border-radius: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-between;
+  font-size: 1rem;
 }
