@@ -62,7 +62,7 @@ function showSearchWeather(resp) {
               <div class="cardOne">
               <h5 >${resp.name}</h5>
                 <img
-                  src="http://openweathermap.org/img/wn/${
+                  src="https://openweathermap.org/img/wn/${
                     resp.weather[0].icon
                   }@2x.png"
                   
@@ -94,7 +94,7 @@ function showWeather(resp) {
               <div class="cardTwo">
               <h5>${dt.toDateString()}</h5>
                 <img
-                  src="http://openweathermap.org/img/wn/${
+                  src="https://openweathermap.org/img/wn/${
                     day.weather[0].icon
                   }@2x.png"
                   alt="${day.weather[0].description}"
