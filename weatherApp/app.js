@@ -16,7 +16,7 @@ currLocationBtn.addEventListener("click", () => {
       let lon = position.coords.longitude;
       let lat = position.coords.latitude;
       //api call
-      let apiCall = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=${units}&lang=${lang}`;
+      let apiCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=${units}&lang=${lang}`;
 
       //fetch the api with custom lat and long
       fetch(apiCall)
@@ -41,7 +41,7 @@ searchButton.addEventListener("click", () => {
   const cityName = document.querySelector(".inputVal").value;
 
   //N.B: remember to add the HTTP:// before the link, you spent an hour wondering why the api call wasn't working....
-  let apiCall = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=${units}&appid=${API_KEY}`;
+  let apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=${units}&appid=${API_KEY}`;
 
   fetch(apiCall)
     //.then = wait for info to be retreieved from server and "then" uses it.
