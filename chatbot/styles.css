@@ -1,5 +1,4 @@
-@import url(/lens101.github.io/styles.css);
-
+@import url("/styles.css");
 p {
   text-align: center;
 }
@@ -62,5 +61,6 @@ button.chatLauncher:focus {
   padding-bottom: 1em;
 }
 /* To control chatbot window. */
-#WACWidget {
+/* #WACWidget {
 }
+ */
