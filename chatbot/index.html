@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>IBM watson train assistant chatbot</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav id="nav">
+      <div class="nav-center">
+        <!-- nav header -->
+        <div class="nav-header">
+          <!-- Logo -->
+          <img
+            src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-code-coding-kiranshastry-lineal-kiranshastry.png"
+            class="logo"
+          />
+          <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <!-- Links -->
+        <div class="links-container">
+          <ul class="links">
+            <li>
+              <a href="javascript: history.go(-1)">Back to projects</a>
+            </li>
+            <li>
+              <a href="/lens101.github.io/index.html">Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="title">
+        <h2>Ibm Watson chatbot</h2>
+        <p>
+          A train ticket booking service using IBM cloud functions and IBM
+          watson dialog flow.
+        </p>
+      </div>
+    </section>
+    <button type="button" class="chatLauncher">
+      <div>
+        <strong>Booking a train ticket?</strong> Talk with our virtual
+        assistant, Paul.
+      </div>
+    </button>
+    <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: "89d636e9-c767-4893-8f25-3d8b1977bf42", // The ID of this integration.
+        region: "eu-de", // The region your integration is hosted in.
+        serviceInstanceID: "1ecf371f-e0cc-44c3-a531-1df09b9d61e1", // The ID of your service instance.
+        showLauncher: false,
+        onLoad: function (instance) {
+          // Select the button element from the page.
+          const button = document.querySelector(".chatLauncher");
+
+          // Add the event listener to open your web chat.
+          button.addEventListener("click", function clickListener() {
+            instance.openWindow();
+          });
+
+          // Render the web chat. Nothing appears on the page, because the launcher is
+          // hidden and the web chat window is closed by default.
+          instance.render().then(function () {
+            // Now that web chat has been rendered (but is still closed), we make the
+            // custom launcher button visible.
+            button.style.display = "block";
+            button.classList.add("open");
+          });
+        },
+      };
+      setTimeout(function () {
+        const t = document.createElement("script");
+        t.src =
+          "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+          (window.watsonAssistantChatOptions.clientVersion || "latest") +
+          "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
+
+    <script src="app.js" async defer></script>
+  </body>
+</html>
