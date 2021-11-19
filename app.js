@@ -93,7 +93,7 @@ scrollLinks.forEach(function (link) {
     //if the container is open, accomodate for that on smaller screen sizes.
     //as the container only exits on small screen sizes i.e. phones.
     if (navHeight > 82) {
-      position = position + containerHeight;
+      position = position + containerHeight + 1;
     }
 
     window.scrollTo({
