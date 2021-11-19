@@ -337,6 +337,10 @@ header {
   margin-right: 2rem;
   flex-direction: column;
 }
+.newContainer::before{
+  anim
+}
+
 @media screen and (max-width: 800px) {
   .banner {
   }
@@ -350,6 +354,40 @@ header {
   .container p {
     font-size: 1.1rem;
   }
+}
+
+/* Fade-in title and picture */
+
+.fade-in-image {
+  animation: fadeIn 3.5s;
+  -webkit-animation: fadeIn 3.5s;
+  -moz-animation: fadeIn 3.5s;
+  -o-animation: fadeIn 3.5s;
+  -ms-animation: fadeIn 3.5s;
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
 /* sections and title */
