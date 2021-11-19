@@ -337,18 +337,10 @@ header {
   margin-right: 2rem;
   flex-direction: column;
 }
-.newContainer::before{
-  anim
-}
 
-@media screen and (max-width: 800px) {
-  .banner {
-  }
-}
 .hero-picture {
-  border-radius: 50%;
+  border-radius: 10%;
   max-width: 500px;
-  /*   position: relative; */
 }
 @media screen and (min-width: 800px) {
   .container p {
@@ -366,28 +358,48 @@ header {
   -ms-animation: fadeIn 3.5s;
 }
 @keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-moz-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-o-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-ms-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* sections and title */
