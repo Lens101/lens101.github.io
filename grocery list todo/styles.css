@@ -1,10 +1,5 @@
 @import url("/styles.css");
 
-/* section */
-.section {
-  padding: 5rem 0;
-}
-
 main {
   min-height: 100vh;
   display: grid;
@@ -17,14 +12,7 @@ Grocery List
 */
 .section-center {
   border-radius: var(--radius);
-  box-shadow: var(--light-shadow);
   transition: var(--transition);
-  padding: 1rem;
-  margin: 0 auto;
-  margin-top: 3rem;
-}
-.section-center:hover {
-  box-shadow: var(--dark-shadow);
 }
 @media screen and (min-width: 992px) {
   .section-center {
@@ -55,10 +43,14 @@ form {
 }
 .grocery-form {
   padding-left: 3em;
+  padding-right: 3em;
   text-align: center;
   width: 100%;
 }
-
+.grocery-list {
+  padding-left: 2em;
+  padding-left: 2em;
+}
 .grocery-form h3 {
   color: var(--clr-primary-1);
   margin-bottom: 1.5rem;
@@ -130,7 +122,7 @@ form {
   color: var(--clr-grey-5);
 }
 .title {
-  margin-bottom: 0;
+  padding-bottom: 5em;
   color: var(--clr-grey-1);
   letter-spacing: 2px;
   transition: var(--transition);
@@ -199,6 +191,7 @@ About
   border-radius: var(--radius);
   display: grid;
   grid-template-rows: auto 1fr;
+  margin: 0 auto;
 }
 .about-grocery {
   background: var(--clr-white);
@@ -212,7 +205,7 @@ About
     padding-bottom: 30px;
   }
   .about {
-    padding-top: 30px;
+    padding-top: 0px;
   }
   .about-grocery {
     border-bottom: black solid 1px;
@@ -229,6 +222,9 @@ About
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
+    margin: 0 auto;
+    row-gap: 2em;
+    max-width: 1170px;
   }
 }
 

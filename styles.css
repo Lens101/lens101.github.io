@@ -308,7 +308,7 @@ No height propertyin links, so we can target this specifically
 /* hero */
 header {
   min-height: 100vh;
-  background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(rgba(132, 226, 229, 0.5), rgba(0, 0, 0, 0.7)),
     url(./images/hero-bcg.jpeg) center/cover no-repeat;
 }
 .banner {
@@ -322,6 +322,8 @@ header {
 .newContainer h1 {
   text-transform: uppercase;
   color: var(--clr-white);
+  font-family: "Great Vibes", cursive;
+  font-family: "Montserrat", sans-serif;
 }
 .newContainer p {
   margin: 0 auto;
@@ -340,11 +342,14 @@ header {
 
 .hero-picture {
   border-radius: 10%;
-  max-width: 500px;
+  max-width: 350px;
 }
 @media screen and (min-width: 800px) {
   .container p {
     font-size: 1.1rem;
+  }
+  .newContainer {
+    font-size: 0.5rem;
   }
 }
 
@@ -431,7 +436,9 @@ header {
 .flex-container {
   display: flex;
   flex-wrap: wrap; /* Will wrap to next line if container can't contain all elements.*/
-  justify-content: space-around; /* Will put space around each element, inc top / bottom of container. */
+  justify-content: space-between; /* Will put space around each element, inc top / bottom of container. */
+  padding-left: 7rem;
+  padding-right: 7rem;
 }
 
 .about {
@@ -443,11 +450,11 @@ header {
   color: var(--clr-primary-1);
 }
 .column {
-  width: 31%;
+  width: 30%;
   border-top: 1px solid #cdcdcd;
   box-shadow: 2px 5px 5px #888888;
   border-radius: 15px;
-  padding: 1em;
+  padding: 1.5rem;
 }
 
 /* For screens < 800px, flex the box downwards. */
@@ -564,10 +571,10 @@ header {
   display: grid;
   /* Each grid has min size of 300px, but if has room to grow it will, I.E. repsonsive.*/
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  /* grid-template-columns: repeat(3, 1fr); */ /* Good, but doesn't handle small screens well  */
-  padding: 5%;
-  gap: 1em 1rem;
+  padding: 7.5%;
+  gap: 2em 2rem;
   font-family: var(--ff-secondary);
+  padding-top: 0%;
 }
 
 .portWrapper a {
