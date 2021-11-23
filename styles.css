@@ -437,8 +437,8 @@ header {
   display: flex;
   flex-wrap: wrap; /* Will wrap to next line if container can't contain all elements.*/
   justify-content: space-between; /* Will put space around each element, inc top / bottom of container. */
-  padding-left: 7rem;
-  padding-right: 7rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .about {
@@ -454,22 +454,28 @@ header {
   border-top: 1px solid #cdcdcd;
   box-shadow: 2px 5px 5px #888888;
   border-radius: 15px;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 /* For screens < 800px, flex the box downwards. */
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 1000px) {
   .flex-container {
     flex-direction: column;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 5em;
+    padding-right: 5em;
   }
   .column {
     width: 100%;
     margin: 10px 0px 1em 0px;
   }
 }
-
+@media screen and (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
 /* Skills section */
 
 .flex-container2 {
@@ -526,6 +532,9 @@ header {
 }
 #stack-overflow-icon {
   color: #ff9900;
+}
+#react-icon {
+  color: #61dbfb;
 }
 
 /* Icons */
