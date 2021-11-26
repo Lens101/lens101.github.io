@@ -18,7 +18,7 @@ currLocationBtn.addEventListener("click", () => {
       //api call
       let apiCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=${units}&lang=${lang}`;
 
-      //fetch the api with custom lat and long
+      //fetch the api
       fetch(apiCall)
         //.then wait for info to be retreieved from server and "then" uses it.
         .then((response) => {
@@ -35,11 +35,24 @@ currLocationBtn.addEventListener("click", () => {
     });
   }
 });
-
-searchButton.addEventListener("click", () => {
-  //get cityName from the search input.
+document.addEventListener("keydown", (e) => {
   const cityName = document.querySelector(".inputVal").value;
+  if (e.keyCode === 13 && cityName !== "") {
+    callAPI();
+  }
+});
 
+searchButton.addEventListener("click", (e) => {
+  const cityName = document.querySelector(".inputVal").value;
+  if (cityName !== "") {
+    callAPI();
+  }
+});
+
+function callAPI() {
+  //get cityName from the search input.
+  let cityName = document.querySelector(".inputVal").value;
+  cityName = cityName.toLowerCase();
   //N.B: remember to add the HTTP:// before the link, you spent an hour wondering why the api call wasn't working....
   let apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=${units}&appid=${API_KEY}`;
 
@@ -53,7 +66,7 @@ searchButton.addEventListener("click", () => {
       showSearchWeather(data);
     })
     .catch(console.err);
-});
+}
 
 function showSearchWeather(resp) {
   let row = document.querySelector(".insert-content");
