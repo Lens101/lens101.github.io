@@ -1,4 +1,4 @@
-@import url("/lens101.github.io/styles.css");
+@import url('/styles.css');
 
 :root {
   --clr-gold: #c59d5f;
@@ -36,7 +36,7 @@ Questions
 }
 .title h2 {
   color: var(--clr-gold);
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 .title p {
   padding-left: 50px;

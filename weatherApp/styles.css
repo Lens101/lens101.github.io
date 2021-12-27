@@ -19,8 +19,8 @@ body {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  font-family: "Open Sans", sans-serif;
-  background-image: url("https://source.unsplash.com/1929x800/?landscape");
+  font-family: 'Open Sans', sans-serif;
+  background-image: url('https://source.unsplash.com/1929x800/?landscape');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-size: cover;
