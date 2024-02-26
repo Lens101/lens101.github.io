@@ -578,12 +578,18 @@ header {
 
 .portfolio {
   display: grid;
-  /* Each grid has min size of 300px, but if has room to grow it will, I.E. repsonsive.*/
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  padding: 7.5%;
+  grid-template-columns: auto auto; /* Two columns */
+  grid-template-rows: auto auto; /* Two rows */
+  padding: 15%;
   gap: 2em 2rem;
   font-family: var(--ff-secondary);
   padding-top: 0%;
+}
+@media (max-width: 768px) {
+  .portfolio {
+    grid-template-columns: auto; /* One column when screen width is less than 768px */
+    grid-template-rows: auto; /* One row when screen width is less than 768px */
+  }
 }
 
 .portWrapper a {
@@ -598,11 +604,11 @@ header {
 }
 
 .portfolio__image {
-  display: block;
-  overflow: hidden;
+  display: flex;
   box-shadow: 2px 5px 5px #888888;
-  width: 100%;
-  height: 100%;
+  width: 250px;
+  height: 215px;
+  object-fit: contain;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
 }
